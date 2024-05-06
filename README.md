@@ -8,9 +8,20 @@ Accurately estimating snow water equivalent (SWE) is crucial for understanding t
 
 • Parameter elevation Relationships on Independent Slopes Model (PRISM) data: We obtained gridded estimates of daily preciptation and temperature from the PRISM data (Daly et al., 2008) at a spatial resolution of 800 m. Using these datasets, we derived four meteorological variables that are strongly correlated to the spatial distribution of SWE (Mital et al., 2022): accumulated snow, sum positive degree days (PDD), accumulated precipitation, and mean seasonal temperature.
 
-• Elevation maps from National Elevation Dataset (Gesch et al., 2018): These maps were used to extract topographic variables that influence snow melt and snow accumulation processes: slope, aspect, and elevation. 
+• Elevation maps from National Elevation Dataset (Gesch et al., 2018): These maps were used to extract topographic variables that influence snow melt and snow accumulation processes. The topographic variables are: slope, aspect, and elevation. 
 
 <div align=center><image src="./Figures/spatial_extent.jpg"></div>
+<p align=justify>
+Figure 1: Spatial extent and frequency of lidar-derived SWE maps used in this study. Basin names are abbreviated for brevity. 
+</p> 
+
+| File | Description |
+| ------------- | ------------- |
+| `Base_models.zip` | The 5 trained Base models. The Base model used to train TL models is Base model 3. |
+| `Colorado_ScaledLMs.zip` | 12 Local 1 models |
+| `Unscaled_LM_models.zip` | 12 Local 2 models |
+| `TL_1_models.zip` | 12 TL 1 models |
+| `TL_2_3.zip` | 12 TL 2 and 12 TL 3 models |
   
 ## Transfer Learning and Benchmark Models
 We adopted a feed-forward Artificial Neural Network (ANN) architecture, initially training a base model on the source data which corresponds to California's 80 SWE maps. Subsequently, we considered three different modeling approaches to adapt the base model to perform the target task of predicting SWE in Colorado (Figure \ref{TL1, 2, 3}). The first two approaches were: 
@@ -24,19 +35,22 @@ et al., 2007, 2009), while the shallower layers generally capture coarser and si
 • Model TL3: Here, the input variables were not scaled. We observed that elevation has a broad range of variation compared to other predictor variables. Not scaling the input biased the ANN optimizer to give more importance to elevation during training. Otherwise, the approach was similar to TL1 and TL2.
 
 <div align=center><image src="./Figures/TL_schematic0.jpeg"></div>
+<p align=justify>
+Figure 2: Schematic describing the different TL models considered in this study. For brevity, only one version of model TL3 is shown
+</p> 
 
 The performance of transfer learning models was benchmarked against local models trained only on data from Colorado. This helps to validate the added value of transfer learning in improving SWE prediction accuracy. Through this structured approach,we demonstrate a methodological framework that could be applied to other regions facing challenges of data limitation. We considered two versions of local models: Local 1 considers scaled input variables per the usual machine learning practice, while Local 2 prescribes importance to elevation in a manner similar to model TL3.
 
 | File | Description |
 | ------------- | ------------- |
-| `Base_models.zip` | The 5 trained Base models. The Base model used to train TL models is Base model 3. |
+| `Base_models.zip` | The 5 trained Base models. The Base model used in transfer learning is Base model 3. |
 | `Colorado_ScaledLMs.zip` | 12 Local 1 models |
 | `Unscaled_LM_models.zip` | 12 Local 2 models |
 | `TL_1_models.zip` | 12 TL 1 models |
 | `TL_2_3.zip` | 12 TL 2 and 12 TL 3 models |
 
 ## Code Description
-All the codes are writen in Python 3.9.0. The deep learning models are implemented using deep learning framework Keras/TensorFlow. Bayesian Hyperparameter optimization was condcuted using the opensource framework Ax, Adaptive Experimentation platform, following this tutorial: (https://www.justintodata.com/hyperparameter-tuning-with-python-keras-guide/). 
+All the codes are writen in Python 3.9.0. The deep learning models are implemented using deep learning framework Keras/TensorFlow. Bayesian Hyperparameter optimization was conducted using the opensource framework Ax, Adaptive Experimentation platform, following this tutorial: (https://www.justintodata.com/hyperparameter-tuning-with-python-keras-guide/). The hyperparameter search space included activation function, feature scaling techniques, optimization function, learning rate, number of hidden layers, number of neurons per layer, dropout rate, L1 and L2 regularization rates, and batch size. For TL models, additional hyperparameters were: number of frozen hidden layers, number of removed hidden layers, and number of added hidden layers. 
 
 | File | Description |
 | ------------- | ------------- |
@@ -48,7 +62,14 @@ All the codes are writen in Python 3.9.0. The deep learning models are implement
 | `California_data_processing.ipynb/Colorado_data_processing.ipynb` | Jupyter Notebook used to process the raw data (ASO Lidar-maps, Elevation maps, and PRISM data) and generates the datasets (CSV files) for training ANNs. |
 | `SWE_maps_plots.ipynb` | Jupyter Notebook used to plot Colorado true and TL predicted SWE maps (scatter plots). |
 
-## Results
+## Factor Analysis Results
+
+## SWE Prediction Results
+
+To evaluate model performance, we computed the coefficient of determination $R^2$ on the test data. $R^2$ is generally used in regression models to quantify the proportion of the variance in the dependent variable that is predictable by the independent variables \cite{chicco2021coefficient}. $R^2$ is calculated as follows:
+\begin{equation}
+ R^2 = 1 - \frac{\sum_{i = 1}^N (y_i - \hat{y}_i)^2}{\sum_{i = 1}^N (y_i - \bar{y})^2}
+\end{equation}
 
 ## References
 
