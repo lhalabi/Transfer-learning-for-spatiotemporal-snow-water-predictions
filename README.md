@@ -70,7 +70,7 @@ To further investigate the regional and seasonal variability in how the predicto
 
 Colorado in Winter         |  California in Winter
 :-------------------------:|:-------------------------:
-![](/Figures/COL_FA_loadingplot_winter_equal_y.jpg)  |  ![](COL_FA_loadingplot_summer_equal_y.pdf)
+![](/Figures/COL_FA_loadingplot_winter_equal_y.jpg | width=500)  |  ![](/Figures/COL_FA_loadingplot_winter_equal_y.jpg | width=500) 
 
 ## SWE Prediction Results
 
