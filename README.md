@@ -13,7 +13,7 @@ Accurately estimating snow water equivalent (SWE) is crucial for understanding t
 These datasets were rescaled to 800 m and reprojected to a consistent coordinate system for consistency.
 
 <div align=center><image src="./Figures/spatial_extent.jpg"></div>
-<p align=justify>
+<p align=center>
 Figure 1: Spatial extent and frequency of lidar-derived SWE maps used in this study. Basin names are abbreviated for brevity. 
 </p> 
 
@@ -36,7 +36,7 @@ The two approaches were picked because the deeper layers help capture the higher
 • Model TL3: Here, the input variables were not scaled. We observed that elevation has a broad range of variation compared to other predictor variables. Not scaling the input biased the ANN optimizer to give more importance to elevation during training. Otherwise, the approach was similar to TL1 and TL2.
 
 <div align=center><image src="./Figures/TL_schematic0.jpeg"></div>
-<p align=justify>
+<p align=center>
 Figure 2: Schematic describing the different TL models considered in this study. For brevity, only one version of model TL3 is shown
 </p> 
 
@@ -73,7 +73,7 @@ Colorado in March/April         |  California in March/April
 :-------------------------:|:-------------------------:
 ![](/Figures/COL_FA_loadingplot_winter_equal_y.jpg) |  ![](/Figures/CA_FA_loadingplot_winter_equal_y.jpg )
 
-<p align=justify>
+<p align=center>
 Figure 3: EFA Loading plots illustrating the principal factors for Colorado and California datasets in March/April. The x-axis represents the variable name, while the y-axis represents the variable loading.
 </p> 
 
@@ -81,7 +81,7 @@ Colorado in June         |  California in June
 :-------------------------:|:-------------------------:
 ![](/Figures/COL_FA_loadingplot_summer_equal_y.jpg) |  ![](/Figures/CA_FA_loadingplot_summer_equal_y.jpg )
 
-<p align=justify>
+<p align=center>
 Figure 4: EFA Loading plots illustrating the principal factors for Colorado and California datasets in June. The x-axis represents the variable name, while the y-axis represents the variable loading.
 </p> 
 
@@ -103,7 +103,7 @@ TL 2      | TL 3
 :-------------------------:|:-------------------------:
 ![](/Figures/BOXplot_TL2.jpg) |  ![](/Figures/BOXplot_TL3.jpg )
 
-<p align=justify>
+<p align=center>
 Figure 5: Box plot visualization of feature importance of TL2 and TL3.
 </p> 
 
