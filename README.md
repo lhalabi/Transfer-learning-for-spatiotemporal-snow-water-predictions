@@ -29,7 +29,7 @@ The performance of transfer learning models was benchmarked against local models
 
 | File | Description |
 | ------------- | ------------- |
-| `Base_models.zip` | The 5 trained Base models |
+| `Base_models.zip` | The 5 trained Base models. The Base model used to train TL models is Base model 3. |
 | `Colorado_ScaledLMs.zip` | 12 Local 1 models |
 | `Unscaled_LM_models.zip` | 12 Local 2 models |
 | `TL_1_models.zip` | 12 TL 1 models |
