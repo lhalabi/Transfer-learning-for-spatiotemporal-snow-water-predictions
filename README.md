@@ -10,7 +10,7 @@ Accurately estimating snow water equivalent (SWE) is crucial for understanding t
 
 • Elevation maps from National Elevation Dataset (Gesch et al., 2018): These maps were used to extract topographic variables that influence snow melt and snow accumulation processes. The topographic variables are: slope, aspect, and elevation. 
 
-<div align=center><image src="./Figures/spatial_extent.jpg"></div>
+<div align=center><image src="./Figures/spatial_extent.jpg" width="100" height="100" ></div>
 <p align=justify>
 Figure 1: Spatial extent and frequency of lidar-derived SWE maps used in this study. Basin names are abbreviated for brevity. 
 </p> 
@@ -58,11 +58,15 @@ All the codes are writen in Python 3.9.0. The deep learning models are implement
 | `Colorado local Models .ipynb.zip` | Jupyter Notebook used for hyperparameter optimization, training and testing of ANNs on Colorado data to predict SWE in Colorado. 24 models are trained, 12 models with scaled input features and 12 models without scaled input features. Each 12 models are trained and tested using the leave-one-out method since there are 12 SWE maps. The models are called Colorado local models.  |
 | `TL1_models_and_permutation_feature_importance.ipynb` | Jupyter Notebook used for transfer learning according to approach 1 and applies permuation feature importance on TL2 models.  |
 | `TL2_TL3_models.ipynb` | Jupyter Notebook used for transfer learning according to approaches 2 and 3. |
-| `FA-winter/FA_summer.ipynb` | Jupyter Notebook used to apply explanatory factor analysis on California and Colorado winter/summer data. |
+| `FA-winter/FA_summer.ipynb` | Jupyter Notebooks used to apply explanatory factor analysis on California and Colorado winter (March/April) and summer (June) data. |
 | `California_data_processing.ipynb/Colorado_data_processing.ipynb` | Jupyter Notebook used to process the raw data (ASO Lidar-maps, Elevation maps, and PRISM data) and generates the datasets (CSV files) for training ANNs. |
 | `SWE_maps_plots.ipynb` | Jupyter Notebook used to plot Colorado true and TL predicted SWE maps (scatter plots). |
 
 ## Factor Analysis Results
+
+We developed four explanatory factor analysis (EFA) models: two EFA models describing Colorado datasets (one each for March-April and June), and two EFA models describing California datasets (one each for March-April and June). EFA models captured between 0.64 to 0.72 of the total variance in our dataset. All models were able to capture a large proportion of the variance in elevation, accumulated snow, accumulated precipitation, sum PDD (with the exception for March-April in Colorado), and $T_{mean}$. For SWE, the four EFA models were able to capture 0.75, 0.78, 0.74, and 0.57 of the variance.
+
+To further investigate the regional and seasonal variability in how the predictor variables affect SWE, we resorted to factor loading plots shown in Figures~\ref{winter_loading} and \ref{summer_loading}. These plots illustrate the association between variables and factors. Factors are latent variables representing underlying physical mechanisms identified through patterns of variation in our dataset. Factors are arranged based on the amount of variance they capture from the data, listed in descending order. Three factors were found to fit Colorado datasets best, while two factors yielded the best fit for California datasets.
 
 ## SWE Prediction Results
 
