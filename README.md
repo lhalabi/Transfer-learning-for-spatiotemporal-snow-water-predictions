@@ -11,7 +11,7 @@ Accurately estimating snow water equivalent (SWE) is crucial for understanding t
 
 • Elevation maps from National Elevation Dataset (Gesch et al., 2018): These maps were used to extract topographic variables that influence snow melt and snow accumulation processes: slope, aspect, and elevation. 
 
-<div align=center><image src="./Figures/spatial_extent.jpg"></div>
+<div align=center><image src="./Figures/spatial_extent.jpeg"></div>
   
 ## Transfer Learning and Benchmark Models
 We adopted a feed-forward Artificial Neural Network (ANN) architecture, initially training a base model on the source data which corresponds to California's 80 SWE maps. Subsequently, we considered three different modeling approaches to adapt the base model to perform the target task of predicting SWE in Colorado (Figure \ref{TL1, 2, 3}). The first two approaches were: 
