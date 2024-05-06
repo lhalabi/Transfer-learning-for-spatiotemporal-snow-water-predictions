@@ -66,10 +66,12 @@ All the codes are writen in Python 3.9.0. The deep learning models are implement
 
 ## SWE Prediction Results
 
-To evaluate model performance, we computed the coefficient of determination $R^2$ on the test data. $R^2$ is generally used in regression models to quantify the proportion of the variance in the dependent variable that is predictable by the independent variables \cite{chicco2021coefficient}. $R^2$ is calculated as follows:
-\begin{equation}
- R^2 = 1 - \frac{\sum_{i = 1}^N (y_i - \hat{y}_i)^2}{\sum_{i = 1}^N (y_i - \bar{y})^2}
-\end{equation}
+To evaluate model performance, we computed the coefficient of determination $R^2$ on the test data. $R^2$ is generally used in regression models to quantify the proportion of the variance in the dependent variable that is predictable by the independent variables.
+
+<div align=center><image src="./Figures/SWE_results.jpg"></div>
+<p align=justify>
+Table 1: R2 values for modeling SWE. 
+</p> 
 
 ## References
 
