@@ -108,8 +108,6 @@ Figure 5: Box plot visualization of feature importance of TL2 and TL3.
 </p> 
 
 ## References
-
-## References
 <a id="1">[1]</a> 
 Painter, T. (2018). Aso l4 lidar snow water equivalent 50m utm grid, version 1, nasa national snow and ice data center distributed active archive center, boulder, colorado usa.
 
