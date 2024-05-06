@@ -11,7 +11,7 @@ Accurately estimating snow water equivalent (SWE) is crucial for understanding t
 
 • Elevation maps from National Elevation Dataset (Gesch et al., 2018): These maps were used to extract topographic variables that influence snow melt and snow accumulation processes: slope, aspect, and elevation. 
 
-<div align=center><image src="./Figures/spatial_extent.jpeg"></div>
+<div align=center><image src="./Figures/spatial_extent.jpg"></div>
   
 ## Transfer Learning and Benchmark Models
 We adopted a feed-forward Artificial Neural Network (ANN) architecture, initially training a base model on the source data which corresponds to California's 80 SWE maps. Subsequently, we considered three different modeling approaches to adapt the base model to perform the target task of predicting SWE in Colorado (Figure \ref{TL1, 2, 3}). The first two approaches were: 
@@ -24,7 +24,7 @@ et al., 2007, 2009), while the shallower layers generally capture coarser and si
 
 • Model TL3: Here, the input variables were not scaled. We observed that elevation has a broad range of variation compared to other predictor variables. Not scaling the input biased the ANN optimizer to give more importance to elevation during training. Otherwise, the approach was similar to TL1 and TL2.
 
-<div align=center><image src="./Figures/TL_schematic0.jpg"></div>
+<div align=center><image src="./Figures/TL_schematic0.jpeg"></div>
 
 The performance of transfer learning models was benchmarked against local models trained only on data from Colorado. This helps to validate the added value of transfer learning in improving SWE prediction accuracy. Through this structured approach,we demonstrate a methodological framework that could be applied to other regions facing challenges of data limitation. We considered two versions of local models: Local 1 considers scaled input variables per the usual machine learning practice, while Local 2 prescribes importance to elevation in a manner similar to model TL3.
 
