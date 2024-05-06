@@ -4,7 +4,6 @@ Accurately estimating snow water equivalent (SWE) is crucial for understanding t
 
 ## Datasets
 
-
 • Lidar data: we obtained lidar-derived SWE from the Airborne Snow Observatory (ASO) with a 50 m resolution (T. Painter, 2018). ASO data in Colorado consist of 12 maps across five basins from 2016 to 2019: Blue River (BR), Crested Butte (CB), Maroon/Castle Creek (CM), Gunnison-East River (GE), and Gunnison-Taylor River (GT) basins. ASO data in California are more frequent and consist of 94 maps across 13 basins, serving as a rich source for transfer learning. Following quality control measures, we considered 80 maps across 11 basins from 2013 to 2019: Cherry Eleanor (CE), Kings Canyon (KC), Kings North (KN), Lakes Basin (LB), LEE Vining Creek (LV), Merced River (MB), Rush Creek (RC), San Joaquin South Fork (SF), San Joaquin Main Fork (SJ), Tuolumne River (TB), Tuolumne + Cherry/Eleanor (TE).
 
 • Parameter elevation Relationships on Independent Slopes Model (PRISM) data: We obtained gridded estimates of daily preciptation and temperature from the PRISM data (Daly et al., 2008) at a spatial resolution of 800 m. Using these datasets, we derived four meteorological variables that are strongly correlated to the spatial distribution of SWE (Mital et al., 2022): accumulated snow, sum positive degree days (PDD), accumulated precipitation, and mean seasonal temperature.
@@ -28,12 +27,20 @@ et al., 2007, 2009), while the shallower layers generally capture coarser and si
 
 The performance of transfer learning models was benchmarked against local models trained only on data from Colorado. This helps to validate the added value of transfer learning in improving SWE prediction accuracy. Through this structured approach,we demonstrate a methodological framework that could be applied to other regions facing challenges of data limitation. We considered two versions of local models: Local 1 considers scaled input variables per the usual machine learning practice, while Local 2 prescribes importance to elevation in a manner similar to model TL3.
 
+| File | Description |
+| ------------- | ------------- |
+| `Base_models.zip` | The 5 trained Base models |
+| `Colorado_ScaledLMs.zip` | 12 Local 1 models |
+| `Unscaled_LM_models.zip` | 12 Local 2 models |
+| `TL_1_models.zip` | 12 TL 1 models |
+| `TL_2_3.zip` | 12 TL 2 and 12 TL 3 models |
+
 ## Code Description
 All the codes are writen in Python 3.9.0. The deep learning models are implemented using deep learning framework Keras/TensorFlow. Bayesian Hyperparameter optimization was condcuted using the opensource framework Ax, Adaptive Experimentation platform, following this tutorial: (https://www.justintodata.com/hyperparameter-tuning-with-python-keras-guide/). 
 
 | File | Description |
 | ------------- | ------------- |
-| `California base models .ipynb/` | Jupyter Notebook used for hyperparameter optimization, training and testing of ANNs on California data to predict SWE in California. 3 models are trained each with a different training/validation split. The models are called California base models.|
+| `California base models .ipynb/` | Jupyter Notebook used for hyperparameter optimization, training and testing of ANNs on California data to predict SWE in California. 5 models are trained each with a different training/validation split. The models are called California base models.|
 | `Colorado local Models .ipynb.zip` | Jupyter Notebook used for hyperparameter optimization, training and testing of ANNs on Colorado data to predict SWE in Colorado. 24 models are trained, 12 models with scaled input features and 12 models without scaled input features. Each 12 models are trained and tested using the leave-one-out method since there are 12 SWE maps. The models are called Colorado local models.  |
 | `TL1_models_and_permutation_feature_importance.ipynb` | Jupyter Notebook used for transfer learning according to approach 1 and applies permuation feature importance on TL2 models.  |
 | `TL2_TL3_models.ipynb` | Jupyter Notebook used for transfer learning according to approaches 2 and 3. |
@@ -42,5 +49,7 @@ All the codes are writen in Python 3.9.0. The deep learning models are implement
 | `SWE_maps_plots.ipynb` | Jupyter Notebook used to plot Colorado true and TL predicted SWE maps (scatter plots). |
 
 ## Results
+
+## References
 
 
