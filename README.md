@@ -10,6 +10,8 @@ Accurately estimating snow water equivalent (SWE) is crucial for understanding t
 
 • Elevation maps from National Elevation Dataset (Gesch et al., 2018): These maps were used to extract topographic variables that influence snow melt and snow accumulation processes. The topographic variables are: slope, aspect, and elevation. 
 
+These datasets were rescaled to 800 m and reprojected to a consistent coordinate system for consistency
+
 <div align=center><image src="./Figures/spatial_extent.jpg"></div>
 <p align=justify>
 Figure 1: Spatial extent and frequency of lidar-derived SWE maps used in this study. Basin names are abbreviated for brevity. 
@@ -72,9 +74,22 @@ Colorado in Winter         |  California in Winter
 :-------------------------:|:-------------------------:
 ![](/Figures/COL_FA_loadingplot_winter_equal_y.jpg) |  ![](/Figures/CA_FA_loadingplot_winter_equal_y.jpg )
 
+<div align=center><image src="./Figures/TL_schematic0.jpeg"></div>
+<p align=justify>
+Figure 3: EFA Loading plots illustrating the principal factors for Colorado and California datasets in March/April. The x-axis represents the variable name, while the y-axis represents the variable loading.
+</p> 
+
 Colorado in Summer         |  California in Summer
 :-------------------------:|:-------------------------:
 ![](/Figures/COL_FA_loadingplot_summer_equal_y.jpg) |  ![](/Figures/CA_FA_loadingplot_summer_equal_y.jpg )
+
+
+<div align=center><image src="./Figures/TL_schematic0.jpeg"></div>
+<p align=justify>
+Figure 3: EFA Loading plots illustrating the principal factors for Colorado and California datasets in June. The x-axis represents the variable name, while the y-axis represents the variable loading.
+</p> 
+
+The analysis reveals consistent patterns across both Colorado and California, with elevation and accumulated snow consistently driving high SWE values throughout different months. Additionally, low temperatures are consistently related to high SWE values in both regions across various time periods. This indicates that transfer learning could be implemented to predict SWE in Colorado using data from California. However, disparities emerge in the influence of precipitation and temperature-driven processes, with Colorado showing a stronger dependence on precipitation and California exhibiting a more pronounced sensitivity to temperature-related factors, particularly in March-April. There is also a disparity in the effect of slope on SWE values in Colorado and California. These point to differences in higher-order complexities in relationships between the predictors and SWE across Colorado and California. This is a key insight for implementing transfer learning whose results are presented next
 
 ## SWE Prediction Results
 
