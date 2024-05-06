@@ -68,6 +68,10 @@ We developed four explanatory factor analysis (EFA) models: two EFA models descr
 
 To further investigate the regional and seasonal variability in how the predictor variables affect SWE, we resorted to factor loading plots shown in Figures~\ref{winter_loading} and \ref{summer_loading}. These plots illustrate the association between variables and factors. Factors are latent variables representing underlying physical mechanisms identified through patterns of variation in our dataset. Factors are arranged based on the amount of variance they capture from the data, listed in descending order. Three factors were found to fit Colorado datasets best, while two factors yielded the best fit for California datasets.
 
+Colorado in Winter         |  California in Winter
+:-------------------------:|:-------------------------:
+![](/Figures/COL_FA_loadingplot_winter_equal_y.pdf)  |  ![](COL_FA_loadingplot_summer_equal_y.pdf)
+
 ## SWE Prediction Results
 
 To evaluate model performance, we computed the coefficient of determination $R^2$ on the test data. $R^2$ is generally used in regression models to quantify the proportion of the variance in the dependent variable that is predictable by the independent variables.
