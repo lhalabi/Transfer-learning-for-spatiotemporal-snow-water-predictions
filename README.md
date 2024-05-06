@@ -74,7 +74,6 @@ Colorado in Winter         |  California in Winter
 :-------------------------:|:-------------------------:
 ![](/Figures/COL_FA_loadingplot_winter_equal_y.jpg) |  ![](/Figures/CA_FA_loadingplot_winter_equal_y.jpg )
 
-<div align=center><image src="./Figures/TL_schematic0.jpeg"></div>
 <p align=justify>
 Figure 3: EFA Loading plots illustrating the principal factors for Colorado and California datasets in March/April. The x-axis represents the variable name, while the y-axis represents the variable loading.
 </p> 
@@ -83,8 +82,6 @@ Colorado in Summer         |  California in Summer
 :-------------------------:|:-------------------------:
 ![](/Figures/COL_FA_loadingplot_summer_equal_y.jpg) |  ![](/Figures/CA_FA_loadingplot_summer_equal_y.jpg )
 
-
-<div align=center><image src="./Figures/TL_schematic0.jpeg"></div>
 <p align=justify>
 Figure 3: EFA Loading plots illustrating the principal factors for Colorado and California datasets in June. The x-axis represents the variable name, while the y-axis represents the variable loading.
 </p> 
