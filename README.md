@@ -41,7 +41,7 @@ The two approaches were picked because the deeper layers help capture the higher
 Figure 2: Schematic describing the different TL models considered in this study. For brevity, only one version of model TL3 is shown
 </p> 
 
-The performance of transfer learning models was benchmarked against local models trained only on data from Colorado. This helps to validate the added value of transfer learning in improving SWE prediction accuracy. Through this structured approach,we demonstrate a methodological framework that could be applied to other regions facing challenges of data limitation. We considered two versions of local models: Local 1 considers scaled input variables per the usual machine learning practice, while Local 2 prescribes importance to elevation in a manner similar to model TL3.
+• Local Models: the performance of transfer learning models was benchmarked against local models trained only on data from Colorado. This helps to validate the added value of transfer learning in improving SWE prediction accuracy. We considered two versions of local models: Local 1 considers scaled input variables per the usual machine learning practice, while Local 2 prescribes importance to elevation in a manner similar to model TL3.
 
 | File | Description |
 | ------------- | ------------- |
