@@ -68,9 +68,9 @@ All the codes are writen in Python 3.9.0. The deep learning models are implement
 
 To evaluate model performance, we computed the coefficient of determination $R^2$ on the test data. $R^2$ is generally used in regression models to quantify the proportion of the variance in the dependent variable that is predictable by the independent variables.
 
-<div align=center><image src="./Figures/SWE_results.jpg"></div>
+<div align=center><image src="./Figures/SWE_results.png"></div>
 <p align=justify>
-Table 1: R2 values for modeling SWE. 
+Table 1: $R^2$ values for modeling SWE. 
 </p> 
 
 ## References
