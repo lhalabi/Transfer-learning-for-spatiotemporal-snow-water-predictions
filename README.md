@@ -31,8 +31,7 @@ We adopted a feed-forward Artificial Neural Network (ANN) architecture, initiall
 • Model TL1: This involved freezing the shallower layers (preventing their weights from changing) and retraining only the deeper layers.
 • Model TL2: This involved freezing all the weights of the model, removing deeper layers, and adding new layers whose weights were trained on the target data.
 
-The two approaches were picked because the deeper layers help capture the higher order complexities in the relationship between input features and the output (Larochelle232
-et al., 2007, 2009), while the shallower layers generally capture coarser and simpler relationships. Complex relationships in the deeper layers of the base model may be more particular to the source task, while the information in the shallower layers may be more easily generalized to the target task. Additionally, it is important to mention that in our analysis, permutation feature importance applied to the transfer learning models revealed that elevation was not a predominant factor during training. This finding contrasted with our EFA results, which highlighted elevation as a critical variable in determining SWE values in Colorado. Therefore, we developed a third transfer learning approach where the importance of elevation was prescribed:
+The two approaches were picked because the deeper layers help capture the higher order complexities in the relationship between input features and the output, while the shallower layers generally capture coarser and simpler relationships. Complex relationships in the deeper layers of the base model may be more particular to the source task, while the information in the shallower layers may be more easily generalized to the target task. Additionally, it is important to mention that in our analysis, permutation feature importance applied to the transfer learning models revealed that elevation was not a predominant factor during training. This finding contrasted with our EFA results, which highlighted elevation as a critical variable in determining SWE values in Colorado. Therefore, we developed a third transfer learning approach where the importance of elevation was prescribed:
 
 • Model TL3: Here, the input variables were not scaled. We observed that elevation has a broad range of variation compared to other predictor variables. Not scaling the input biased the ANN optimizer to give more importance to elevation during training. Otherwise, the approach was similar to TL1 and TL2.
 
@@ -52,7 +51,7 @@ The performance of transfer learning models was benchmarked against local models
 | `TL_2_3.zip` | 12 TL 2 and 12 TL 3 models |
 
 ## Code Description
-All the codes are writen in Python 3.9.0. The deep learning models are implemented using deep learning framework Keras/TensorFlow. Bayesian Hyperparameter optimization was conducted using the opensource framework Ax, Adaptive Experimentation platform, following this tutorial: (https://www.justintodata.com/hyperparameter-tuning-with-python-keras-guide/). The hyperparameter search space included activation function, feature scaling techniques, optimization function, learning rate, number of hidden layers, number of neurons per layer, dropout rate, L1 and L2 regularization rates, and batch size. For TL models, additional hyperparameters were: number of frozen hidden layers, number of removed hidden layers, and number of added hidden layers. Lastly, Factor Analysis was conducted using the package FactorAnalyzer in Python with varimax rotation (Biggs & Madnani, 2021). 
+All the codes are writen in Python 3.9.0. The deep learning models are implemented using deep learning framework Keras/TensorFlow (Chollet et al., 2015) . Bayesian Hyperparameter optimization was conducted using the opensource framework Ax, Adaptive Experimentation platform (Bakshy et al., 2018), following this tutorial: (https://www.justintodata.com/hyperparameter-tuning-with-python-keras-guide/). The hyperparameter search space included activation function, feature scaling techniques, optimization function, learning rate, number of hidden layers, number of neurons per layer, dropout rate, L1 and L2 regularization rates, and batch size. For TL models, additional hyperparameters were: number of frozen hidden layers, number of removed hidden layers, and number of added hidden layers. Lastly, Factor Analysis was conducted using the package FactorAnalyzer in Python with varimax rotation (Biggs & Madnani, 2021). 
 
 | File | Description |
 | ------------- | ------------- |
@@ -110,4 +109,25 @@ Figure 5: Box plot visualization of feature importance of TL2 and TL3.
 
 ## References
 
+## References
+<a id="1">[1]</a> 
+Painter, T. (2018). Aso l4 lidar snow water equivalent 50m utm grid, version 1, nasa national snow and ice data center distributed active archive center, boulder, colorado usa.
 
+<a id="1">[2]</a> 
+Daly, C., Halbleib, M., Smith, J. I., Gibson, W. P., Doggett, M. K., Taylor, G. H.,. . . Pasteris, P. P. (2008). Physiographically sensitive mapping of climatological temperature and precipitation across the conterminous united states. International Journal of Climatology: a Journal of the Royal Meteorologica Society, 28 (15), 2031–2064
+
+<a id="1">[3]</a> 
+Gesch, D. B., Evans, G. A., Oimen, M. J., & Arundel, S. (2018). The national elevation dataset. https://apps.nationalmap.gov. U.S. Geological Survey. (Accessed: 2022-04-15)
+
+<a id="1">[4]</a> 
+Biggs, J., & Madnani, N. (2021). factor analyzer. GitHub. Retrieved from https://github.com/EducationalTestingService/factor\ analyzer/blob/main/factor\ analyzer/factor\ analyzer.py
+
+<a id="1">[5]</a> 
+Bakshy, E., Dworkin, L., Karrer, B., Kashin, K., Letham, B., Murthy, A., & Singh,S. (2018). Ae: A domain-agnostic platform for adaptive experimentation.. Retrieved from https://api.semanticscholar.org/CorpusID:73557896
+
+<a id="1">[6]</a> 
+Chollet, F., et al. (2015). Keras. GitHub. Retrieved from https://github.com/fchollet/keras
+
+<a id="1">[7]</a> 
+Mital, U., Dwivedi, D.,  ̈Ozgen Xian, I., Brown, J. B., & Steefel, C. I. (2022, October). Modeling Spatial Distribution of Snow Water Equivalent by Combinin Meteorological and Satellite Data with Lidar Maps. Artificial Intelligence for the Earth Systems, 1 (4), e220010. Retrieved 2022-12-08, from https://journals.ametsoc.org/view/journals/aies/1/4/AIES-D-22-0010.1.xml 
+doi: 10.1175/AIES-D-22-0010.1
