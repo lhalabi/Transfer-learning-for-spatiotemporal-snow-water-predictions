@@ -70,7 +70,7 @@ We developed four explanatory factor analysis (EFA) models: two EFA models descr
 
 To further investigate the regional and seasonal variability in how the predictor variables affect SWE, we resorted to factor loading plots shown in Figures 3 and 4. These plots illustrate the association between variables and latent factors. Each latent factor can be considered to be a proxy or latent representation of underlying physical phenomena that influence snowpack. Factors are arranged based on the amount of variance they capture from the data, listed in descending order. Three factors were found to fit Colorado datasets best, while two factors yielded the best fit for California datasets.
 
-Colorado in Winter         |  California in Winter
+Colorado in March/April         |  California in March/April
 :-------------------------:|:-------------------------:
 ![](/Figures/COL_FA_loadingplot_winter_equal_y.jpg) |  ![](/Figures/CA_FA_loadingplot_winter_equal_y.jpg )
 
@@ -78,7 +78,7 @@ Colorado in Winter         |  California in Winter
 Figure 3: EFA Loading plots illustrating the principal factors for Colorado and California datasets in March/April. The x-axis represents the variable name, while the y-axis represents the variable loading.
 </p> 
 
-Colorado in Summer         |  California in Summer
+Colorado in June         |  California in June
 :-------------------------:|:-------------------------:
 ![](/Figures/COL_FA_loadingplot_summer_equal_y.jpg) |  ![](/Figures/CA_FA_loadingplot_summer_equal_y.jpg )
 
@@ -90,11 +90,22 @@ The analysis reveals consistent patterns across both Colorado and California, wi
 
 ## SWE Prediction Results
 
-To evaluate model performance, we computed the coefficient of determination $R^2$ on the test data. $R^2$ is generally used in regression models to quantify the proportion of the variance in the dependent variable that is predictable by the independent variables.
+To evaluate model performance, we computed the coefficient of determination $R^2$ on the test data. $R^2$ is generally used in regression models to quantify the proportion of the variance in the dependent variable that is predictable by the independent variables. We also calculated the normalized bias $b$. Bias is an indicator of how much our mean predicted SWE values deviate from the mean true SWE values.
+We see that TL3 had the best performance with the highest mean $R^2$ and second lowest standard deviation about the mean of $R^2$, and the lowest mean absolute value of bias between all model types. The standard deviation of TL models is less than that of the local models. Overall, transfer learning enhanced the accuracy and robustness of SWE predictions in Colorado.
 
 <div align=center><image src="./Figures/SWE_results.png"></div>
 <p align=center>
 Table 1: $R^2$ values for modeling SWE. 
+</p> 
+
+Figure 5 presents the statistical distribution of feature importances for models TL2 and TL3. Overall, unscaling raised the importance of elevation and reduced the importance of Tmean. EFA loading plots indicated that an ML approach should replicate the influence of elevation and accumulated snow on SWE. A feature importance analysis revealed that elevation was given a low priority during model training. This motivated us to develop a strategy to manually prescribe importance to elevation during training. Since the purpose of feature scaling is to ensure that optimization of model weights is affected equally by each predictor variable, we chose to train a model without scaling. All variables other than elevation exhibited a similar (and smaller) range of variation compared to elevation, therefore unscaling served as a simple and effective strategy to prescribe more importance to elevation. In general, unscaling may not always yield optimal results and other feature engineering approaches may need to be considered.
+
+TL 2      | TL 3
+:-------------------------:|:-------------------------:
+![](/Figures/BOXplot_TL2.jpg) |  ![](/Figures/BOXplot_TL3.jpg )
+
+<p align=justify>
+Figure 5: Box plot visualization of feature importance of TL2 and TL3.
 </p> 
 
 ## References
