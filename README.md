@@ -10,7 +10,7 @@ Accurately estimating snow water equivalent (SWE) is crucial for understanding t
 
 • Elevation maps from National Elevation Dataset (Gesch et al., 2018): These maps were used to extract topographic variables that influence snow melt and snow accumulation processes. The topographic variables are: slope, aspect, and elevation. 
 
-<div align=center><image src="./Figures/spatial_extent.jpg" width="500" height="500" ></div>
+<div align=center><image src="./Figures/spatial_extent.jpg"></div>
 <p align=justify>
 Figure 1: Spatial extent and frequency of lidar-derived SWE maps used in this study. Basin names are abbreviated for brevity. 
 </p> 
