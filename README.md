@@ -51,11 +51,13 @@ All the codes are writen in Python 3.9.0. The deep learning models are implement
 | ------------- | ------------- |
 | `California_base_models.ipynb/California_base_models_sample_code.ipynb` | Jupyter Notebook used for hyperparameter optimization, training and testing of ANNs on California data to predict SWE in California. 5 models are trained each with a different training/validation split. The models are called California base models. Notebook California_base_models.ipynb shows the training procedure of Base model 3 and the test results. California_base_models_sample_code.ipynb is a cleaned sample code. |
 | `Colorado local Models.ipynb.zip` | Jupyter Notebook used for hyperparameter optimization, training and testing of ANNs on Colorado data to predict SWE in Colorado. 24 models are trained, 12 models with scaled input features and 12 models without scaling input features. Each 12 models are trained and tested using the leave-one-out method since there are 12 SWE maps. The models are called Local models. |
-| `TL1_models_and_permutation_feature_importance.ipynb` | Jupyter Notebook used for transfer learning according to approach 1 and applies permuation feature importance on TL2 and TL3 models.  |
+| `TL1_models_and_permutation_feature_importance.ipynb` | Jupyter Notebook used for transfer learning according to approach 1 and applies permuation feature importance on TL2 and TL3 models. |
 | `TL2_TL3_models.ipynb` | Jupyter Notebook used for transfer learning according to approaches 2 and 3. |
 | `FA-winter/FA_summer.ipynb` | Jupyter Notebooks used to apply explanatory factor analysis on California and Colorado winter (March/April) and summer (June) data. |
-| `California_data_processing.ipynb/Colorado_data_processing.ipynb` | Jupyter Notebook used to process the raw data (ASO Lidar-maps, Elevation maps, and PRISM data) and generates the datasets (CSV files) for training ANNs. |
+| `Preprocessing_Template.ipynb` | Jupyter Notebook template used process the raw data (ASO Lidar-maps, Elevation maps, and PRISM data). |
+| `California_data_processing.ipynb/Colorado_data_processing.ipynb` | Jupyter Notebook used to generates the datasets (CSV files) for training ANNs and plot backward accumulation plots. |
 | `SWE_maps_plots.ipynb` | Jupyter Notebook used to plot Colorado true and TL predicted SWE maps (scatter plots). |
+
 
 ## Factor Analysis Results
 
