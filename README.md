@@ -17,13 +17,6 @@ These datasets were rescaled to 800 m and reprojected to a consistent coordinate
 Figure 1: Spatial extent and frequency of lidar-derived SWE maps used in this study. Basin names are abbreviated for brevity. 
 </p> 
 
-| File | Description |
-| ------------- | ------------- |
-| `Base_models.zip` | The 5 trained Base models. The Base model used to train TL models is Base model 3. |
-| `Colorado_ScaledLMs.zip` | 12 Local 1 models |
-| `Unscaled_LM_models.zip` | 12 Local 2 models |
-| `TL_1_models.zip` | 12 TL 1 models |
-| `TL_2_3.zip` | 12 TL 2 and 12 TL 3 models |
   
 ## Transfer Learning and Benchmark Models
 We adopted a feed-forward Artificial Neural Network (ANN) architecture, initially training a base model on the source data which corresponds to California's 80 SWE maps. Subsequently, we considered three different modeling approaches to adapt the base model to perform the target task of predicting SWE in Colorado (Figure 2). The first two approaches were: 
