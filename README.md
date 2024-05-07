@@ -17,6 +17,14 @@ These datasets were rescaled to 800 m and reprojected to a consistent coordinate
 Figure 1: Spatial extent and frequency of lidar-derived SWE maps used in this study. Basin names are abbreviated for brevity. 
 </p> 
 
+
+| File | Description |
+| ------------- | ------------- |
+| `California CSV files/ Colorado CSV files` | Generated CSV datasets for Colorado and California. |
+| `Cal_ASO_1.zip/Cal_ASO_2.zip/Cal_ASO_3.zip/Cal_ASO_4.zip/Cal_ASO_5.zip` | Original ASO SWE maps for California. They are stored in multiple zip files due to maximum file size constraint. |
+| `Final_processed_California_topography_SWE_snapshots.zip` | Processed ASO SWE maps and Topography files in California. |
+| `Final_processed_Colorado_topography_SWE_snapshots.zip` | Processed ASO SWE maps and Topography files in Colorado. |
+
   
 ## Transfer Learning and Benchmark Models
 We adopted a feed-forward Artificial Neural Network (ANN) architecture, initially training a base model on the source data which corresponds to California's 80 SWE maps. Subsequently, we considered three different modeling approaches to adapt the base model to perform the target task of predicting SWE in Colorado (Figure 2). The first two approaches were: 
